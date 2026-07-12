@@ -69,7 +69,7 @@ To simulate an automated build pipeline validator that parses files, evaluates s
 python pipeline.py
 
 ```
-The application evaluates the ecosystem natively and contains a dynamic LLM Playbook generator fallback architecture that operates cleanly without any setup requirements. To activate the high-fidelity live text summary narration generation during review, you can supply your credentials directly into the terminal shell immediately before running the execution commands:
+
 
 
 This automated gate prints out telemetry logs, pushes event files to `enterprise_risk_report.json`, and returns a hard exit code status (`sys.exit(1)`) if computed risks exceed the pre-configured corporate safety threshold, successfully blocking vulnerable code pushes from entering production clusters.
