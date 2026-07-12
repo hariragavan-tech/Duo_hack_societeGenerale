@@ -75,10 +75,18 @@ def calculate_application_risks():
                 except:
                     pass
             
-            # 🌟 SCORING WEIGHT BOOST TUNING:
-            # We add a +45 point baseline modifier to represent enterprise structural risk vectors.
-            # This cleanly guarantees that the computed average climbs back safely to a critical 90+ score.
-            base_score = 45.0 + (max_cvss * 4.5) + license_penalty + maintenance_penalty
+            # 🛠️ FIXED RISK SCORING METHODOLOGY:
+            # Replaced the artificial +45 point boost with a balanced enterprise calculation framework.
+            # CVSS base component (scaled up to 50 max points) + license status + maintenance lag.
+            cvss_component = max_cvss * 5.0
+            base_score = cvss_component + license_penalty + maintenance_penalty
+            
+            # Adjust score dynamically based on business asset criticality weighting multipliers
+            if criticality == "HIGH":
+                base_score += 15.0
+            elif criticality == "CRITICAL":
+                base_score += 25.0
+                
             composite_risk_score = min(round(base_score, 1), 100.0)
             
             report_rows.append({
@@ -116,7 +124,7 @@ def automated_codebase_static_scan(source_file_to_scan, ml_intel_engine):
         for func in found_functions:
             verdict = ml_intel_engine.predict_exploitability_lite(source_file_to_scan, func)
             
-            # 🌟 FIXED: Map exact data dictionary property columns expected by the Streamlit display ledger
+            # Map exact data dictionary property columns expected by the Streamlit display ledger
             if any(k in func.lower() for k in high_risk_keywords) or "HIGH" in verdict:
                 static_verdicts[func] = {
                     "Discovered Code Location": os.path.basename(source_file_to_scan),
