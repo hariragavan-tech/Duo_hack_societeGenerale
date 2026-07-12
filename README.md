@@ -26,10 +26,10 @@ Execute the following commands sequentially in your terminal infrastructure to c
 
 ```bash
 # Clone the enterprise source repository from the version control engine
-git clone https://github.com/hariragavan-tech/Duo_hack_societyGenerale
+git clone https://github.com/hariragavan-tech/Duo_hack_societeGenerale
 
 # Navigate into the initialized software core directory
-cd Duo_hack_societyGenerale
+cd Duo_hack_societeGenerale
 
 # Install the required data processing, visualization, and machine learning dependencies
 pip install streamlit pandas numpy scikit-learn plotly networkx
