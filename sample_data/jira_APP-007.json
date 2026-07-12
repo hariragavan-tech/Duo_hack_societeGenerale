@@ -1,0 +1,15 @@
+{
+    "fields": {
+        "project": {
+            "key": "SEC"
+        },
+        "summary": "Security Defect: Resolve Transitive Dependencies in DevToolkit",
+        "description": "h1. \ud83d\udea8 SECURITY COMPLIANCE DEVIATION DETECTED\n\nThe automated CI/CD pipeline blocked deployment of *DevToolkit* (APP-007) due to a security compliance threshold breach.\n\n* *Assigned Risk Score:* 68.0/100 (Threshold: 50.0)\n* *Pipeline Action:* DEPLOYMENT GATE BLOCKED\n\nh3. \ud83d\udd0d Detected Transitive Risk Paths:\n1. *CVE-2024-1163* (CVSS: 6.8) -> Attack Vector: `APP-007 -> pyjwt -> react-dom -> mysql-connector-java -> netty-all`\n2. *CVE-2023-1146* (CVSS: 2.8) -> Attack Vector: `APP-007 -> pyjwt -> react-dom -> mysql-connector-java -> netty-all -> assertj-core`\n3. *CVE-2024-1174* (CVSS: 7.4) -> Attack Vector: `APP-007 -> bouncycastle-bcprov -> disruptor`\n\nh3. \ud83d\udee0\ufe0f Auto-Assigned Mitigations:\n* Run a dependency tree isolation sweep.\n* Replace/upgrade affected transitive components to latest non-vulnerable versions.\n* Run `python pipeline.py` locally to re-verify compliance status.",
+        "issuetype": {
+            "name": "Bug"
+        },
+        "priority": {
+            "name": "High"
+        }
+    }
+}

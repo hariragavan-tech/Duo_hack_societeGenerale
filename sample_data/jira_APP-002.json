@@ -1,0 +1,15 @@
+{
+    "fields": {
+        "project": {
+            "key": "SEC"
+        },
+        "summary": "Security Defect: Resolve Transitive Dependencies in PaymentService",
+        "description": "h1. \ud83d\udea8 SECURITY COMPLIANCE DEVIATION DETECTED\n\nThe automated CI/CD pipeline blocked deployment of *PaymentService* (APP-002) due to a security compliance threshold breach.\n\n* *Assigned Risk Score:* 97.5/100 (Threshold: 50.0)\n* *Pipeline Action:* DEPLOYMENT GATE BLOCKED\n\nh3. \ud83d\udd0d Detected Transitive Risk Paths:\n1. *CVE-2026-1050* (CVSS: 6.1) -> Attack Vector: `APP-002 -> micrometer-core`\n2. *CVE-2024-1163* (CVSS: 6.8) -> Attack Vector: `APP-002 -> mysql-connector-java -> netty-all`\n3. *CVE-2024-1163* (CVSS: 6.8) -> Attack Vector: `APP-002 -> guava -> netty-all`\n\nh3. \ud83d\udee0\ufe0f Auto-Assigned Mitigations:\n* Run a dependency tree isolation sweep.\n* Replace/upgrade affected transitive components to latest non-vulnerable versions.\n* Run `python pipeline.py` locally to re-verify compliance status.",
+        "issuetype": {
+            "name": "Bug"
+        },
+        "priority": {
+            "name": "High"
+        }
+    }
+}
