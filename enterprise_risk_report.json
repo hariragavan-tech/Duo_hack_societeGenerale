@@ -9,7 +9,7 @@
         {
             "application_id": "APP-001",
             "application_name": "CustomerPortal",
-            "composite_risk_score": 97.0,
+            "composite_risk_score": 100.0,
             "max_cvss_severity": 8.4,
             "total_discovered_vulnerabilities": 31,
             "compliance_gate_verdict": "FAIL (CRITICAL VIOLATION)",
@@ -19,12 +19,6 @@
                     "cvss_score": 6.1,
                     "dependency_depth": 1,
                     "attack_path": "APP-001 -> micrometer-core"
-                },
-                {
-                    "cve_id": "CVE-2024-1163",
-                    "cvss_score": 6.8,
-                    "dependency_depth": 2,
-                    "attack_path": "APP-001 -> mysql-connector-java -> netty-all"
                 },
                 {
                     "cve_id": "CVE-2024-1163",
@@ -41,15 +35,21 @@
                 {
                     "cve_id": "CVE-2024-1163",
                     "cvss_score": 6.8,
+                    "dependency_depth": 6,
+                    "attack_path": "APP-001 -> mockito-core -> chi -> pyjwt -> react-dom -> mysql-connector-java -> netty-all"
+                },
+                {
+                    "cve_id": "CVE-2024-1163",
+                    "cvss_score": 6.8,
                     "dependency_depth": 2,
-                    "attack_path": "APP-001 -> logback-core -> netty-all"
+                    "attack_path": "APP-001 -> mysql-connector-java -> netty-all"
                 }
             ]
         },
         {
             "application_id": "APP-002",
             "application_name": "PaymentService",
-            "composite_risk_score": 97.5,
+            "composite_risk_score": 100.0,
             "max_cvss_severity": 8.5,
             "total_discovered_vulnerabilities": 26,
             "compliance_gate_verdict": "FAIL (CRITICAL VIOLATION)",
@@ -59,12 +59,6 @@
                     "cvss_score": 6.1,
                     "dependency_depth": 1,
                     "attack_path": "APP-002 -> micrometer-core"
-                },
-                {
-                    "cve_id": "CVE-2024-1163",
-                    "cvss_score": 6.8,
-                    "dependency_depth": 2,
-                    "attack_path": "APP-002 -> mysql-connector-java -> netty-all"
                 },
                 {
                     "cve_id": "CVE-2024-1163",
@@ -82,6 +76,12 @@
                     "cve_id": "CVE-2024-1163",
                     "cvss_score": 6.8,
                     "dependency_depth": 2,
+                    "attack_path": "APP-002 -> mysql-connector-java -> netty-all"
+                },
+                {
+                    "cve_id": "CVE-2024-1163",
+                    "cvss_score": 6.8,
+                    "dependency_depth": 2,
                     "attack_path": "APP-002 -> logback-core -> netty-all"
                 }
             ]
@@ -89,7 +89,7 @@
         {
             "application_id": "APP-003",
             "application_name": "InternalAPI",
-            "composite_risk_score": 98.0,
+            "composite_risk_score": 100.0,
             "max_cvss_severity": 8.6,
             "total_discovered_vulnerabilities": 31,
             "compliance_gate_verdict": "FAIL (CRITICAL VIOLATION)",
@@ -98,13 +98,13 @@
                     "cve_id": "CVE-2026-1050",
                     "cvss_score": 6.1,
                     "dependency_depth": 2,
-                    "attack_path": "APP-003 -> mocha -> micrometer-core"
+                    "attack_path": "APP-003 -> node-fetch -> micrometer-core"
                 },
                 {
                     "cve_id": "CVE-2026-1050",
                     "cvss_score": 6.1,
                     "dependency_depth": 2,
-                    "attack_path": "APP-003 -> node-fetch -> micrometer-core"
+                    "attack_path": "APP-003 -> mocha -> micrometer-core"
                 },
                 {
                     "cve_id": "CVE-2024-1163",
@@ -121,15 +121,15 @@
                 {
                     "cve_id": "CVE-2024-1174",
                     "cvss_score": 7.4,
-                    "dependency_depth": 8,
-                    "attack_path": "APP-003 -> django -> nats -> vue -> testify -> mapstruct -> netty-handler -> jetty-server -> disruptor"
+                    "dependency_depth": 4,
+                    "attack_path": "APP-003 -> psycopg2 -> logback-classic -> jetty-server -> disruptor"
                 }
             ]
         },
         {
             "application_id": "APP-004",
             "application_name": "HRPortal",
-            "composite_risk_score": 97.5,
+            "composite_risk_score": 100.0,
             "max_cvss_severity": 8.5,
             "total_discovered_vulnerabilities": 32,
             "compliance_gate_verdict": "FAIL (CRITICAL VIOLATION)",
@@ -149,20 +149,20 @@
                 {
                     "cve_id": "CVE-2024-1174",
                     "cvss_score": 7.4,
-                    "dependency_depth": 5,
-                    "attack_path": "APP-004 -> uuid -> mapstruct -> netty-handler -> jetty-server -> disruptor"
+                    "dependency_depth": 4,
+                    "attack_path": "APP-004 -> psycopg2 -> logback-classic -> jetty-server -> disruptor"
+                },
+                {
+                    "cve_id": "CVE-2024-1174",
+                    "cvss_score": 7.4,
+                    "dependency_depth": 6,
+                    "attack_path": "APP-004 -> setuptools -> numpy -> psycopg2 -> logback-classic -> jetty-server -> disruptor"
                 },
                 {
                     "cve_id": "CVE-2024-1174",
                     "cvss_score": 7.4,
                     "dependency_depth": 8,
-                    "attack_path": "APP-004 -> django -> nats -> vue -> testify -> mapstruct -> netty-handler -> jetty-server -> disruptor"
-                },
-                {
-                    "cve_id": "CVE-2024-1174",
-                    "cvss_score": 7.4,
-                    "dependency_depth": 8,
-                    "attack_path": "APP-004 -> scikit-learn -> scipy -> setuptools -> numpy -> psycopg2 -> logback-classic -> jetty-server -> disruptor"
+                    "attack_path": "APP-004 -> matplotlib -> httpx -> setuptools -> numpy -> psycopg2 -> logback-classic -> jetty-server -> disruptor"
                 }
             ]
         },
@@ -177,14 +177,8 @@
                 {
                     "cve_id": "CVE-2026-1050",
                     "cvss_score": 6.1,
-                    "dependency_depth": 2,
-                    "attack_path": "APP-005 -> mocha -> micrometer-core"
-                },
-                {
-                    "cve_id": "CVE-2026-1050",
-                    "cvss_score": 6.1,
-                    "dependency_depth": 3,
-                    "attack_path": "APP-005 -> sharp -> node-fetch -> micrometer-core"
+                    "dependency_depth": 1,
+                    "attack_path": "APP-005 -> micrometer-core"
                 },
                 {
                     "cve_id": "CVE-2026-1050",
@@ -203,6 +197,12 @@
                     "cvss_score": 6.1,
                     "dependency_depth": 2,
                     "attack_path": "APP-005 -> node-fetch -> micrometer-core"
+                },
+                {
+                    "cve_id": "CVE-2026-1050",
+                    "cvss_score": 6.1,
+                    "dependency_depth": 2,
+                    "attack_path": "APP-005 -> mocha -> micrometer-core"
                 }
             ]
         },
@@ -214,12 +214,6 @@
             "total_discovered_vulnerabilities": 29,
             "compliance_gate_verdict": "FAIL (CRITICAL VIOLATION)",
             "resolved_transitive_attack_paths": [
-                {
-                    "cve_id": "CVE-2024-1163",
-                    "cvss_score": 6.8,
-                    "dependency_depth": 4,
-                    "attack_path": "APP-006 -> pyjwt -> react-dom -> mysql-connector-java -> netty-all"
-                },
                 {
                     "cve_id": "CVE-2024-1163",
                     "cvss_score": 6.8,
@@ -235,21 +229,27 @@
                 {
                     "cve_id": "CVE-2024-1163",
                     "cvss_score": 6.8,
-                    "dependency_depth": 5,
-                    "attack_path": "APP-006 -> chi -> pyjwt -> react-dom -> mysql-connector-java -> netty-all"
+                    "dependency_depth": 4,
+                    "attack_path": "APP-006 -> sqlx -> react-dom -> mysql-connector-java -> netty-all"
                 },
                 {
                     "cve_id": "CVE-2024-1163",
                     "cvss_score": 6.8,
                     "dependency_depth": 3,
                     "attack_path": "APP-006 -> react-dom -> mysql-connector-java -> netty-all"
+                },
+                {
+                    "cve_id": "CVE-2024-1163",
+                    "cvss_score": 6.8,
+                    "dependency_depth": 4,
+                    "attack_path": "APP-006 -> pyjwt -> react-dom -> mysql-connector-java -> netty-all"
                 }
             ]
         },
         {
             "application_id": "APP-007",
             "application_name": "DevToolkit",
-            "composite_risk_score": 68.0,
+            "composite_risk_score": 100.0,
             "max_cvss_severity": 9.6,
             "total_discovered_vulnerabilities": 30,
             "compliance_gate_verdict": "FAIL (CRITICAL VIOLATION)",
@@ -269,20 +269,20 @@
                 {
                     "cve_id": "CVE-2024-1174",
                     "cvss_score": 7.4,
-                    "dependency_depth": 2,
-                    "attack_path": "APP-007 -> bouncycastle-bcprov -> disruptor"
+                    "dependency_depth": 4,
+                    "attack_path": "APP-007 -> psycopg2 -> logback-classic -> jetty-server -> disruptor"
                 },
                 {
                     "cve_id": "CVE-2024-1174",
                     "cvss_score": 7.4,
-                    "dependency_depth": 8,
-                    "attack_path": "APP-007 -> redis -> httpx -> setuptools -> numpy -> psycopg2 -> logback-classic -> jetty-server -> disruptor"
+                    "dependency_depth": 6,
+                    "attack_path": "APP-007 -> setuptools -> numpy -> psycopg2 -> logback-classic -> jetty-server -> disruptor"
                 },
                 {
                     "cve_id": "CVE-2024-1174",
                     "cvss_score": 7.4,
-                    "dependency_depth": 8,
-                    "attack_path": "APP-007 -> scikit-learn -> scipy -> setuptools -> numpy -> psycopg2 -> logback-classic -> jetty-server -> disruptor"
+                    "dependency_depth": 4,
+                    "attack_path": "APP-007 -> wheel -> go-redis -> bouncycastle-bcprov -> disruptor"
                 }
             ]
         },
@@ -297,20 +297,14 @@
                 {
                     "cve_id": "CVE-2026-1050",
                     "cvss_score": 6.1,
-                    "dependency_depth": 2,
-                    "attack_path": "APP-008 -> mocha -> micrometer-core"
-                },
-                {
-                    "cve_id": "CVE-2026-1050",
-                    "cvss_score": 6.1,
                     "dependency_depth": 1,
                     "attack_path": "APP-008 -> micrometer-core"
                 },
                 {
-                    "cve_id": "CVE-2024-1163",
-                    "cvss_score": 6.8,
+                    "cve_id": "CVE-2026-1050",
+                    "cvss_score": 6.1,
                     "dependency_depth": 2,
-                    "attack_path": "APP-008 -> mysql-connector-java -> netty-all"
+                    "attack_path": "APP-008 -> mocha -> micrometer-core"
                 },
                 {
                     "cve_id": "CVE-2024-1163",
@@ -323,6 +317,12 @@
                     "cvss_score": 6.8,
                     "dependency_depth": 2,
                     "attack_path": "APP-008 -> grpc-core -> netty-all"
+                },
+                {
+                    "cve_id": "CVE-2024-1163",
+                    "cvss_score": 6.8,
+                    "dependency_depth": 6,
+                    "attack_path": "APP-008 -> mockito-core -> chi -> pyjwt -> react-dom -> mysql-connector-java -> netty-all"
                 }
             ]
         },
@@ -334,18 +334,6 @@
             "total_discovered_vulnerabilities": 30,
             "compliance_gate_verdict": "FAIL (CRITICAL VIOLATION)",
             "resolved_transitive_attack_paths": [
-                {
-                    "cve_id": "CVE-2026-1050",
-                    "cvss_score": 6.1,
-                    "dependency_depth": 2,
-                    "attack_path": "APP-009 -> mocha -> micrometer-core"
-                },
-                {
-                    "cve_id": "CVE-2026-1050",
-                    "cvss_score": 6.1,
-                    "dependency_depth": 3,
-                    "attack_path": "APP-009 -> sharp -> node-fetch -> micrometer-core"
-                },
                 {
                     "cve_id": "CVE-2026-1050",
                     "cvss_score": 6.1,
@@ -363,6 +351,18 @@
                     "cvss_score": 6.1,
                     "dependency_depth": 2,
                     "attack_path": "APP-009 -> node-fetch -> micrometer-core"
+                },
+                {
+                    "cve_id": "CVE-2026-1050",
+                    "cvss_score": 6.1,
+                    "dependency_depth": 2,
+                    "attack_path": "APP-009 -> mocha -> micrometer-core"
+                },
+                {
+                    "cve_id": "CVE-2026-1050",
+                    "cvss_score": 6.1,
+                    "dependency_depth": 3,
+                    "attack_path": "APP-009 -> sharp -> node-fetch -> micrometer-core"
                 }
             ]
         },
@@ -389,12 +389,6 @@
                 {
                     "cve_id": "CVE-2024-1163",
                     "cvss_score": 6.8,
-                    "dependency_depth": 5,
-                    "attack_path": "APP-010 -> chi -> pyjwt -> react-dom -> mysql-connector-java -> netty-all"
-                },
-                {
-                    "cve_id": "CVE-2024-1163",
-                    "cvss_score": 6.8,
                     "dependency_depth": 4,
                     "attack_path": "APP-010 -> sqlx -> react-dom -> mysql-connector-java -> netty-all"
                 },
@@ -403,6 +397,12 @@
                     "cvss_score": 6.8,
                     "dependency_depth": 6,
                     "attack_path": "APP-010 -> mockito-core -> chi -> pyjwt -> react-dom -> mysql-connector-java -> netty-all"
+                },
+                {
+                    "cve_id": "CVE-2024-1163",
+                    "cvss_score": 6.8,
+                    "dependency_depth": 5,
+                    "attack_path": "APP-010 -> chi -> pyjwt -> react-dom -> mysql-connector-java -> netty-all"
                 }
             ]
         }

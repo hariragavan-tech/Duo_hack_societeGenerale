@@ -55,13 +55,14 @@ def calculate_application_risks():
                     if cvss > max_cvss:
                         max_cvss = cvss
                         
-                # Check 2: License Risk Rules
+                # Check 2: License Risk Rules (FIXED: Safe key lookup using .get())
                 if lic in lic_dict:
                     rule = lic_dict[lic]
-                    if rule['status'] == 'DISALLOWED':
-                        if rule['risk_level'] == 'CRITICAL':
+                    if rule.get('status') == 'DISALLOWED':
+                        risk_lvl = rule.get('risk_level', 'LOW')
+                        if risk_lvl == 'CRITICAL':
                             license_penalty = max(license_penalty, 35)
-                        elif rule['risk_level'] == 'HIGH':
+                        elif risk_lvl == 'HIGH':
                             license_penalty = max(license_penalty, 20)
                         else:
                             license_penalty = max(license_penalty, 10)
